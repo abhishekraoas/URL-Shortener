@@ -16,7 +16,7 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background-color: #f0f0f0;
+        /* background-color: #f0f0f0; */
       }
       h1 {
         text-align: center;
@@ -62,6 +62,20 @@
             background-color: #f0f0f0;
         }
 
+        .urlClicks{
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+
+
     </style>
   </head>
   <body>
@@ -86,5 +100,30 @@
 
       <% } %>
     </div>
+
+    <div class="urlClicks">
+        <% if (locals.urls) { %>
+         <table>
+           <thead>
+            <th>S. No</th>
+            <th>ShortID</th>
+            <th>Redirect</th>
+            <th>Clicks</th>
+           </thead>
+           <tbody>
+            <% urls.forEach((url, index)=> { %>
+                <tr>
+                <td><%= index + 1 %></td>
+                <td><%= url.shortId %></td>
+                <td><%= url.redirectURL %></td>
+                <td><%= url.visitHistory.length %></td>
+            </tr>
+            <% }); %>
+               
+           </tbody>
+         </table>
+        <% } %>
+    </div>
+
   </body>
 </html>

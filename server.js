@@ -1,9 +1,15 @@
 const express = require("express");
+const path = require("path");
 const urlRoute = require("./routes/url.routes");
 const {connectToMongoDB} = require("./connectionDB");
 const URL = require("./models/url.models")
 const app = express();
 const PORT = 3000;
+
+
+//Connecting EJS File
+app.set("view engine", "ejs");
+app.set("views", path.resolve("./views"));
 
 //Database Connection
 connectToMongoDB("mongodb://localhost:27017/short-url")
@@ -15,8 +21,8 @@ connectToMongoDB("mongodb://localhost:27017/short-url")
 app.use(express.json());
 
 app.get("/test", async(req, res)=>{
-    const allUrls = await URL.find();
-    return res.end( )
+    const allUrls = await URL.find({});
+    return res.render("home", {urls: allUrls});
 })
 
 //Routes

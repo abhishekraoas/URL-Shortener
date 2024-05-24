@@ -4,11 +4,87 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      input {
+        padding: 10px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .URL_Generated p {
+        margin-top: 20px;
+        text-align: center;
+
+      }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .URL_Generated{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -325px;
+            margin-left: 110px;
+            background-color: #f0f0f0;
+        }
+
+    </style>
   </head>
   <body>
-    <h1>Hey..I'm from Server</h1>
-    <% urls.forEach(url => { %>
-    <li><%=url.shortId %></li>
-    <% }) %>
+
+    <div class="form">
+    <h1>URL Shortener</h1>
+      <form action="/url" method="post">
+        <input type="text" name="url" placeholder="Enter Your URL" />
+        <button type="submit">Shorten</button>
+      </form>
+    </div>
+
+    <div class="URL_Generated">
+      <% if (locals.id) { %>
+
+      <p>
+        URL Generated :
+        <a href="http://localhost:3000/url/<%= id %>"
+          >http://localhost:3000/url/<%= id %></a
+        >
+      </p>
+
+      <% } %>
+    </div>
   </body>
 </html>

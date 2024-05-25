@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+         body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .signupForm {
+            width: 300px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px #0000000d;
+        }
+
+        .signupForm h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .signupForm input {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .signupForm label{
+            height: 10px;
+
+        }
+
+        .signupForm button {
+            padding: 10px;
+            width: 100%;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .signupForm button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <diiv class="signupForm">
+        <h1>Sign Up</h1>
+        <form action="/user" method="POST">
+            <label for="name">Full Name</label>
+            <input type="text" required name="name" placeholder="Enter Your Name" required>
+            <label for="email">Email</label>
+            <input type="email" required name="email" placeholder="Enter Your Email" required>
+            <label for="password">Password</label>
+            <input type="password" required name="password" placeholder="Enter Your Password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </diiv>
+</body>
+</html>

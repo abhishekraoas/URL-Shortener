@@ -5,52 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
     <style>
+        /* Reset and global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #333;
         }
 
         .loginForm {
-            width: 300px;
             background: #fff;
-            padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px 0px #0000000d;
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         .loginForm h1 {
-            text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #333;
         }
 
         .loginForm input {
-            padding: 10px;
             width: 100%;
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
             border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .loginForm input:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
         }
 
         .loginForm button {
-            padding: 10px;
             width: 100%;
+            padding: 12px;
+            margin-top: 20px;
             border: none;
-            background-color: #007BFF;
-            color: white;
+            background: #007bff;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
             border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         .loginForm button:hover {
-            background-color: #0056b3;
+            background: #0056b3;
+            transform: translateY(-2px);
         }
 
+        .loginForm p {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .loginForm a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .loginForm a:hover {
+            color: #0056b3;
+        }
+
+        /* Responsive design */
+        @media (max-width: 500px) {
+            .loginForm {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>

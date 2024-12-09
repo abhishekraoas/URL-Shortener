@@ -4,6 +4,7 @@ const {connectToMongoDB} = require("./connectionDB");
 const URL = require("./models/url.models")
 const cookieParser = require("cookie-parser");
 const {restrictToLoggedInUserOnly, checkAuth}= require("./middlewares/auth.middlewares");
+require("dotenv").config();
 
 
 const urlRoute = require("./routes/url.routes");
@@ -20,7 +21,7 @@ app.set("views", path.resolve("./views"));
 
 
 //Database Connection
-connectToMongoDB("mongodb://localhost:27017/short-url")
+connectToMongoDB(process.env.MONGO_URI)
 .then(()=>{
     console.log("Connected to MongoDB");
 });
